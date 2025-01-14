@@ -1,0 +1,55 @@
+<div class="col s12">
+    <div class="row center-align">
+        <h1>{{mensaje}}</h1>
+    </div>
+    <div>
+        <h4 style="text-align: justify;">
+            A continuación, te presentamos algunos peluditos que siguen disponibles para la adopción. 
+            Recuerda que se merecen un hogar cálido y con mucho amor.
+        </h4>
+    </div>
+    <div class="row">
+        {{#each animales}}
+        <div class="col s12 m6 l4">
+            <div class="card">
+                <div class="card-image">
+                    <!-- Imagen de la tarjeta -->
+                    <img src="{{foto}}" alt="{{name}}" style="width: 100%; height: 300px; object-fit: cover; border-radius: 10px;">
+                    <span class="card-title" >{{name}} </span>
+                </div>
+                <div class="card-content">
+                    <p><strong>Edad:</strong> {{edad}}</p>
+                    
+                </div>
+                <div class="card-action center-align">
+                    <!-- Botón para abrir el modal -->
+                    <a href="#modal-{{id}}" class="modal-trigger">Ver Más</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Modal Structure -->
+        <div id="modal-{{id}}" class="modal center-align">
+            <div class="modal-content">
+                <div class="center-align">
+                    <h1>{{name}}</h1>
+                </div>
+                <div class="center-align">
+                    <!-- Imagen dentro del modal -->
+                    <img src="{{foto}}" alt="{{name}}" style="width: 100%; height: auto; border-radius: 10px;">
+                </div>
+                <p><strong>Edad:</strong> {{edad}}</p>
+                <p><strong>Descripcion:</strong></p>
+                <p>{{description}}</p>
+                <div class="center-align">
+                    <p><strong>Numero de Contacto para adopciones:</strong></p>
+                    <p><strong>{{contact}}</strong></p>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <a href="#!" class="modal-close waves-effect waves-green btn-flat">Cerrar</a>
+            </div>
+        </div>
+        {{/each}}
+    </div>
+</div>

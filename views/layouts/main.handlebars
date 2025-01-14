@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Materialize CSS -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <!-- Iconos Material Design -->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="icon" href="/media/patita.png" type="image/png">
+    <title>{{titulo}}</title>
+    
+<script>
+$(document).ready(function () {
+    // Inicializar sidenav y modales
+    $('.sidenav').sidenav();
+    $('.modal').modal();
+});
+</script>
+
+</head>
+<body class="grey lighten-4" style="background-color: #c3f999" ><!--style="background-image: url('/media/cafe.jpg'); background-size: cover; background-repeat: no-repeat; background-position: center;" --> 
+  <!-- Estructura Flexbox de Materialize -->
+  <div class="wrapper" style="display: flex; flex-direction: column; min-height: 100vh; background-color: #ebffdb;">
+  
+    <header>
+      <nav>
+          <div class="nav-wrapper navbar-fixed white text-color-black {{azulBase}}"> 
+              <a href="/" class="left brand-logo"><img src="media/patita.png" alt="logo" style="height: 50px; margin: 5px;"></a>
+              <!-- Ícono que abre el menú lateral -->
+              <a href="#" data-target="mobile-demo" class="right sidenav-trigger"><i class="material-icons black-text">dehaze</i></a>
+              <ul class="right hide-on-med-and-down">
+                  <li><a href="/" class="black-text waves-purple"><i class="large material-icons left">pets</i><b>Adopciones</b></a></li>
+                  <li><a href="/recaudacion" class="black-text waves-purple"><i class="large material-icons left">archive</i><b>Donativos</b></a></li>
+              </ul>
+          </div>
+      </nav>
+    </header>
+
+    <main style="flex-grow: 1;">
+        <!-- Estructura del menú lateral (sidenav) -->
+      <ul id="mobile-demo" class="sidenav brown lighten-2">
+          <li><a href="/" class="black-text waves-purple"><i class="small material-icons left">pets</i>Adopciones</a></li>
+          <li><a href="/recaudacion" class="black-text waves-purple"><i class="small material-icons left">archive</i>Donativos</a></li>
+      </ul>
+
+      <div class="container">
+          {{{body}}}
+      </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="page-footer {{azulBase}}" style="">
+        <div class="container">
+            <div class="row center-align">
+                <p class="black-text"><b>{{titulo}}</b></p>
+            </div>
+            <div class="footer-copyright" style="">
+                <div class="container black-text" id="footer">
+                    © 2025 Copyright {{titulo}}
+                </div>
+                <div>
+                    <a class="black-text right" href="" target="_blank" style="margin-right: 30px;">@{{titulo}}</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+  </div>
+
+</body>
+</html>
